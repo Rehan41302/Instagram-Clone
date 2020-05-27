@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.nav-wrapper a{
+    color: #000000 !important;
+}
+
+.brand-logo{
+    font-family: 'Pacifico', cursive;
+    margin-left: 10px;
+}
