@@ -1,8 +1,9 @@
 const express = require("express")
 const router = express.Router();
 const User = require("../models/user")
-const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const bcrypt = require("bcryptjs")
+const requireLogin = require("../middleware/requireLogin")
 
 
 // @route POST
@@ -59,7 +60,7 @@ router.post("/signin",(req,res) => {
                     // User matched
                     // Create JWT Payload
                     const payload = {
-                    id: user.id,
+                    _id: user.id,
                     name: user.name,
                     };
             // Sign token

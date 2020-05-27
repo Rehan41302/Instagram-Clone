@@ -3,6 +3,8 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
 const mongoose = require("mongoose")
+const AuthRoutes = require("./routes/auth")
+const PostRoutes = require("./routes/post")
 
 
 app.use(express.json())
@@ -26,7 +28,9 @@ mongoose.connection.on('error',(err) => {
 
 
 // Auth Routes
-app.use(require("./routes/auth"))
+app.use("/api/auth",AuthRoutes)
+// Post Routes
+app.use("/api/post",PostRoutes)
 
 
 
